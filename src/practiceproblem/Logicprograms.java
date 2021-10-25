@@ -3,11 +3,12 @@ import java.util.Scanner;
 public class Logicprograms {
 	public static void main(String[] args) {
 	Logicprograms rv1 = new Logicprograms();
-	//rv1.fibonacci();
-	//rv1.perfectnumber();
-	//rv1.primenumber();	
+	rv1.fibonacci();
+	rv1.perfectnumber();
+	rv1.primenumber();	
 	rv1.reverse();
-	}
+	rv1.cuponnumber();
+}
  void fibonacci() {
 	 int number_one,number_two,number_three,num = 5;
 	 Scanner rv = new Scanner(System.in);
@@ -69,4 +70,17 @@ public class Logicprograms {
 		 System.out.println("The reverse of the given number is: " + reverse);
    }
   }
+ void cuponnumber() {
+	 char[] chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789".toCharArray();
+	 int max=100000000;
+	 int random = (int)(Math.random()*max);
+	 StringBuffer sb = new StringBuffer();
+	
+	 while (random>0) {
+		 sb.append(chars[random % chars.length]);
+		 random = random/chars.length;
+	 }
+	 String cuponcode=sb.toString();
+	 System.out.println("Cupon code: "+cuponcode);
+ }
 }
